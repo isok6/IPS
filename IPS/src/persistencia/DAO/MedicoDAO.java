@@ -20,7 +20,7 @@ public class MedicoDAO extends DBConnection implements DAO {
     @Override
     public void insertar(Object objeto) throws SQLException {
         try {
-            PreparedStatement st = conectarDB().prepareStatement("insert into cuentas (nombre) values (?)");
+            PreparedStatement st = conectarDB().prepareStatement("insert into medicos (nombre) values (?)");
 
             st.setString(1, ((Medico) objeto).getNombre()[0]);
             st.executeUpdate();
