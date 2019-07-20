@@ -1,0 +1,48 @@
+INSERT INTO Categoria (k_tipo, v_copago, v_multa)
+VALUES ('A', '3200', '10000');
+
+INSERT INTO Categoria (k_tipo, v_copago, v_multa)
+VALUES ('B', '12700', '20000');
+
+INSERT INTO Categoria (k_tipo, v_copago, v_multa)
+VALUES ('C', '33500', '50000');
+
+
+
+INSERT INTO Persona (k_id, i_tipo_id, i_sexo, f_nacimiento , n_correo,tel_contacto ,password ,n_nombre,n_apellido)
+VALUES ('101013502', 'CC', 'M', '1999-11-25' , 'isok_gamboa1999@hotmail.com','5605074' ,'morcillapte' ,'Isaac','Gamboa');
+
+INSERT INTO Persona (k_id, i_tipo_id, i_sexo, f_nacimiento , n_correo,tel_contacto ,password ,n_nombre,n_apellido)
+VALUES ('88000897', 'TI', 'M', '2015-09-07' , 'jordyDragonBall@gmail.com','3672933' ,'solomillos' ,'Jordy','Rodriguez');
+
+
+
+INSERT INTO Cliente (i_estado, k_id, k_parentesco,estado_multa,k_categoria)
+VALUES ('A', '88000897', null,'N','C');
+
+INSERT INTO Especialidad ( k_codigo, n_nombre)
+VALUES ('MG1', 'Medico General');
+
+
+INSERT INTO Doctor ( k_id, k_cod_esp)
+VALUES ('101013502', 'MG1');
+
+
+
+
+
+
+
+INSERT INTO Agenda ( k_id, f_fecha , f_hora_inicial , f_hora_final , i_estado , k_id_med)
+VALUES ('1', '2019-07-19' , TIMESTAMP'2019-07-19 21:22:23' , TIMESTAMP'2019-07-19 14:00:00' , 'A' , '101013502');
+
+
+INSERT INTO Cita ( k_id, f_creacion , i_estado , preescripcion , diagnostico , k_id_cliente, k_id_agenda)
+VALUES ('0', '2019-06-23 09:30:21' , 'F' , 'Tomar tabletas cada vez que sineta dolor' , 'machucon en el dedo' , '88000897', '1');
+
+INSERT INTO tipoCita ( k_id	, duracion)
+VALUES ('MD', TIMESTAMP'2019-06-23 00:30:00');
+
+
+INSERT INTO Agenda_tipoCita ( k_id_agenda, k_id_tipoC)
+VALUES ('1', 'MD');
